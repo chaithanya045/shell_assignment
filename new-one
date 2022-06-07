@@ -1,0 +1,98 @@
+#!/bin/bash
+
+echo "please enter your line number:"
+read line
+
+
+
+echo "please give your scale given below: "
+echo "Scale1:High"
+echo "scale2:medium"
+echo "scale3:low"
+
+read -p "please make your choice {1,2,3} :" choice1
+if [ "$choice1" == "HIGH" ];then
+        echo "your scale is valid and will be stored"
+	 
+
+elif [ "$choice1" == "MEDIUM" ];then
+        echo "your scale is valid and will be stored"
+
+elif [ "$choice1" == "LOW" ];then
+        echo "your scale is valid and will be stored"
+	
+
+else
+	echo "your sacle is invalid,please enter a valid scale given in choice"
+	
+fi
+	
+
+
+echo "please give your component name :"
+echo "component1:ingestor"
+echo "component2:joiner"
+echo "component3:wrangler"
+echo "component4:validator"
+
+
+read -p "please make your choice in {1,2,3,4}: " choice
+if [ "$choice" == "ingestor" ];then
+	echo "your component is valid and will be stored"
+	
+
+elif [ "$choice" == "joiner" ];then
+        echo "your component is valid and will be stored"
+  
+
+
+
+elif [ "$choice" == "validator" ];then
+        echo "your component is valid and will be stored"
+  
+
+	
+
+elif [ "$choice" == "wrangler" ];then
+   	echo "your component is valid and will be stored"
+f  
+
+
+else
+       echo "your component is invalid,please enter a valid component name"
+       
+fi
+
+
+
+
+echo "please give your input choice between 1-9:"
+read choice3
+if [ $choice3 -lt 10 ];then
+	echo "it is valid one and will be stored"
+	sed -i "${line}s/.*/$choice2;$choice1;$choice;ETL;vdopia-etl=$choice3/" sig.conf
+	
+else 
+	echo "invalid input!!,please enter a valid number"
+	
+fi
+
+
+echo "please give your view: "
+echo "view1:action"
+echo "view2:bid"
+read -p "please give your choice :" choice2
+	
+if [ "$choice2" == "action" ];then
+        echo "your component is valid and will be stored"
+	B=vdopiasample
+	sed -i "${line}s/.*/$B;$choice1;$choice;ETL;vdopia-etl=$choice3/" sig.conf	
+elif [ "$choice2" == "bid" ];then
+        echo "your component is valid and will be stored"
+        A=vdopiasample-bid
+	sed -i "${line}s/.*/$A;$choice1;$choice;ETL;vdopia-etl=$choice3/" sig.conf
+else
+	echo "your input is invalid,please try valid one"
+fi
+
+cat sig.conf
