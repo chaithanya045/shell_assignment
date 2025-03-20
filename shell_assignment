@@ -3,8 +3,6 @@
 echo "please enter your line number that you want to change the values:"
 read line
 
-#added two new lines
-#added two more new lines
 
 echo "please give your scale given below in capital letters: "
 echo "Scale1:High"
